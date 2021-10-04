@@ -85,11 +85,6 @@ public class ViewBooks extends HorizontalLayout implements HasTitle
 		this.grid.setSizeFull();
 		this.verticalLayout2.add(this.filterComponent, this.grid);
 		this.verticalLayout2.setFlexGrow(1.0, this.grid);
-		this.lblIsbn.setSizeUndefined();
-		this.lblIsbn.getElement().setAttribute("slot", "label");
-		this.txtIsbn.setWidthFull();
-		this.txtIsbn.setHeight(null);
-		this.formItem.add(this.lblIsbn, this.txtIsbn);
 		this.lblName.setSizeUndefined();
 		this.lblName.getElement().setAttribute("slot", "label");
 		this.txtName.setWidthFull();
