@@ -9,9 +9,9 @@
 	<artifactId>jcon_rc_rest_consumer</artifactId>
 	<version>1.0.0.-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
+
 	<name>JCON_RC_REST_Consumer</name>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -35,6 +35,24 @@
 			<groupId>com.rapidclipse</groupId>
 			<artifactId>rap-server-core</artifactId>
 			<version>10.04.01-RAP-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>3.0.2</version>
 		</dependency>
 	</dependencies>
 
