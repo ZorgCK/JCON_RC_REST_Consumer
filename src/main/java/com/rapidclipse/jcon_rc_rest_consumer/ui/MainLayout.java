@@ -20,9 +20,7 @@ public class MainLayout extends AppLayout
 	{
 		this.addToNavbar(new DrawerToggle(), this.title);
 		
-		this.addDrawerEntry(VaadinIcon.HOME, "Home", HomeView.class);
-		this.addDrawerEntry(VaadinIcon.PICTURE, "Pictures", PicturesView.class);
-		this.addDrawerEntry(VaadinIcon.TASKS, "Todos", TodosView.class);
+		this.addDrawerEntry(VaadinIcon.HOME, "Bücher", ViewBooks.class);
 	}
 	
 	private void addDrawerEntry(final VaadinIcon icon, final String label, final Class<? extends Component> linkTarget)
