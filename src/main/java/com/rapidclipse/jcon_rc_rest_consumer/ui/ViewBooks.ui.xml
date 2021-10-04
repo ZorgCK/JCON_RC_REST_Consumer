@@ -2,7 +2,6 @@
 <!DOCTYPE xml>
 <?xdevuiml version="1.0"?>
 <?template NONE?>
-<?import ??>
 <?import com.rapidclipse.framework.server.ui.filter.FilterComponent?>
 <?import com.rapidclipse.jcon_rc_rest_consumer.domain.Book?>
 <?import com.rapidclipse.jcon_rc_rest_consumer.ui.MainLayout?>
@@ -24,14 +23,29 @@
     <x:constraints zpos="0" width="100%" height="100%" />
     <VerticalLayout x:name="verticalLayout2" padding="false">
         <x:constraints width="800px" height="100%" flex-grow="1.0" />
-        <FilterComponent x:name="filterComponent">
+        <FilterComponent x:searchableProperties="isbn,name" x:name="filterComponent" x:filterableProperties="isbn,name,price,release" x:grid="grid">
             <x:constraints width="100%" height="0%" flex-grow="0.0" />
         </FilterComponent>
         <Grid x:name="grid">
             <x:typeArguments>
-                <typeArgument type="?" />
+                <typeArgument type="Book" />
             </x:typeArguments>
             <x:constraints width="100%" height="100%" flex-grow="1.0" />
+            <x:columns>
+                <column property="isbn" header="ISBN" sortable="true" />
+                <column property="name" header="Name" sortable="true" />
+                <column property="price" header="Preis" sortable="true">
+                    <renderer nullRepresentation="" type="NumberRenderer">
+                        <numberFormat format="Currency" pattern="" currency="default" locale="default" />
+                    </renderer>
+                </column>
+                <column property="release" header="Veröffentlichung" sortable="true">
+                    <renderer nullRepresentation="" type="LocalDateRenderer">
+                        <dateTimeFormatter zone="default" format="LocalizedDate" dateFormatStyle="MEDIUM" locale="default" />
+                    </renderer>
+                </column>
+            </x:columns>
+            <x:event>selection.selectionChange</x:event>
         </Grid>
     </VerticalLayout>
     <VerticalLayout x:name="verticalLayout" padding="false">
@@ -113,12 +127,15 @@
             <x:constraints width="100%" height="-1px" flex-grow="0.0" />
             <Button x:themeVariants="LUMO_ERROR" x:name="btndelete" text="Löschen">
                 <x:constraints width="-1px" height="0px" flex-grow="1.0" />
+                <x:event>click.onComponentEvent</x:event>
             </Button>
             <Button x:name="btnInsert" text="Einfügen">
                 <x:constraints width="-1px" height="0px" flex-grow="1.0" />
+                <x:event>click.onComponentEvent</x:event>
             </Button>
             <Button x:name="btnUpdate" text="Speichern">
                 <x:constraints width="-1px" height="0px" flex-grow="1.0" />
+                <x:event>click.onComponentEvent</x:event>
             </Button>
         </HorizontalLayout>
     </VerticalLayout>
